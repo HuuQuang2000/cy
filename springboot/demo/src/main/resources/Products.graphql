@@ -1,0 +1,26 @@
+schema {
+    query: Query
+}
+
+type Query {
+    save(name : String , price : Int , total : Int , idUser : Long ) : Boolean
+    update(id : Long , name : String , price : Int , total : Int , idUser : Long) : product
+    getAll : [product]
+    delete(id : Long) : Boolean
+    findById(id : Long) : product
+    getAllPage(pageIndex : Int , pageSize :Int ) : page
+    findPage(fieldSearch :String) : page
+}
+
+type product {
+    id : Long
+    name : String
+    price : Int
+    total :Int
+    idUser : Long
+}
+
+type page{
+    total : Int
+    content : [product]
+}
